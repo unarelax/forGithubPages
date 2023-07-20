@@ -17,12 +17,28 @@
     ></script>
   </head>
 
-  <body style="margin: 0; overflow: hidden">
+  <!-- <body style="margin: 0; overflow: hidden">
     <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; debugUIEnabled: false;">
       <a-text
         value="This content will always face you."
         look-at="[gps-camera]"
         scale="120 120 120"
+        gps-entity-place="latitude: 40.805; longitude: -74.024;"
+      ></a-text>
+      <a-camera gps-camera rotation-reader> </a-camera>
+    </a-scene>
+  </body> -->
+
+  <body style="margin: 0; overflow: hidden">
+    <a-scene
+      vr-mode-ui="enabled: false"
+      embedded
+      arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;"
+    >
+      <a-text
+        value="This will always face the user."
+        look-at="[gps-camera]"
+        scale="75 75 75"
         gps-entity-place="latitude: 40.805; longitude: -74.024;"
       ></a-text>
       <a-camera gps-camera rotation-reader> </a-camera>
