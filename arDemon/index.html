@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Location-based AR.js with three.js</title>
+    <script type="module" src="dist/bundle.js"></script>
+    <script>
+      const options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0,
+      };
+
+      function success(pos) {
+        var crd = pos.coords;
+        const ele = document.querySelector(".text_box");
+        ele.innerHTML = `<p>Longitude:${crd.longitude}</p><p>Latitude:${crd.latitude}</p>`;
+      }
+
+      function error(err) {
+        const ele = document.querySelector(".text_box");
+        ele.innerHTML = `<p>err:${err.message}</p>`;
+      }
+
+      navigator.geolocation.getCurrentPosition(success, error, options);
+    </script>
+  </head>
+  <body>
+    <div class="text_box"></div>
+    <canvas id="canvas1" style="background-color: black; width: 100%; height: 100%"></canvas>
+  </body>
+</html>
