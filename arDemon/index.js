@@ -30,6 +30,7 @@ function main() {
 
             geojson.features.forEach ( feature => {
                 const box = new THREE.Mesh(geom, mtl);
+                console.log(feature.geometry.coordinates[0], feature.geometry.coordinates[1]);
                 arjs.add(box, feature.geometry.coordinates[0], feature.geometry.coordinates[1]);            
             });
 
